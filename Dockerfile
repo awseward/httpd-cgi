@@ -1,8 +1,8 @@
-FROM httpd:2.4.41-alpine
+FROM httpd:alpine3.20
 
-MAINTAINER Hypoport
+MAINTAINER awseward
 
-RUN apk update ; apk add curl jq coreutils
+RUN apk update ; apk add bash curl jq coreutils erlang
 
 COPY httpd.conf /usr/local/apache2/conf/httpd.conf
 COPY cgi-bin/ /usr/local/apache2/cgi-bin/
